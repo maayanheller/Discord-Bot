@@ -13,12 +13,11 @@ client.on("ready", () => {
 client.on("guildMemberAdd", member => {
 // Send the message to a designated channel on a server:
   const channel = member.guild.channels.cache.find(
-    ch => ch.name === "member-log"
+    ch => ch.name === "New Members"
   );
 // Do nothing if the channel wasn't found on this server
   if (!channel) return;
 // Send the message, mentioning the member
-  channel.send(`Welcome to the server, ${member}`);
+  channel.send(`${member} Welcome to the server, you should introduce yourself so a team can use your skills`);
 });
 // ================================================================
-
