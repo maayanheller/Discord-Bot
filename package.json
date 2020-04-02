@@ -1,0 +1,14 @@
+{
+  "name": "fibibbot",
+  "version": "1.0.0",
+  "description": "a package.json for discord bot code",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maayan Heller",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.1.1"
+  }
+}
