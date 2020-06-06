@@ -13,7 +13,7 @@ client.on("ready", () => {
 // ================================================================
 // Create an event listener for new guild members
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get(':wave:welcome:wave:').send("Welcome"); 
+    member.guild.channels.get('welcome').send("Welcome"); 
 });
 // ================================================================
 
