@@ -12,15 +12,8 @@ client.on("ready", () => {
 
 // ================================================================
 // Create an event listener for new guild members
-client.on("guildMemberAdd", member => {
-// Send the message to Welcome channel on the server:
-  const channel = member.guild.channels.cache.find(
-    ch => ch.name === "welcome"
-  );
-
-  if (!channel) return;
-
-  channel.send(`Welcome to the server, ${member}, go introduce yourself and show us your skills`);
+client.on('guildMemberAdd', member => {
+  member.guild.channels.get('channelID').send("Welcome"); 
 });
 // ================================================================
 
