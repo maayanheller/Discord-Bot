@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const guild = new Discord.Guild();
-this._botToken = 'w';
+const _botToken = process.env.token;
 
 client.on("ready", () => {
   console.log("I am ready!");
@@ -41,4 +40,4 @@ client.on("guildMemberRemove", member => {
 });
 // ================================================================
 
-client.login(this._botToken);
+client.login(_botToken);
