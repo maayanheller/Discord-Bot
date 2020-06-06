@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-this._botToken;
+const guild = new Discord.Guild();
+this._botToken = 'w';
 
 client.on("ready", () => {
   console.log("I am ready!");
@@ -15,11 +16,12 @@ client.on("ready", () => {
 client.on("guildMemberAdd", member => {
 // Send the message to Welcome channel on the server:
   const channel = member.guild.channels.cache.find(
-    ch => ch.name === "Welcome"
+    ch => ch.name === "welcome"
   );
+
   if (!channel) return;
 
-  channel.send(`Welcome to the server, ${member}, go introduce yourself and show your skills`);
+  channel.send(`Welcome to the server, ${member}, go introduce yourself and show us your skills`);
 });
 // ================================================================
 
@@ -31,10 +33,12 @@ client.on("guildMemberAdd", member => {
 // Create an event listener for guild members that leaves
 client.on("guildMemberRemove", member => {
   //Send the goodbye message to the goodbye channel
-  const channel = member.guild.channels.cache.find(channel => channel.name === "Welcome");
+  const channel = member.guild.channels.cache.find(channel => channel.name === "welcome");
 
   if (!channel) return;
 
   channel.send(`Farewell ${member}, we hope to see you soon!`);
 });
 // ================================================================
+
+client.login(this._botToken);
